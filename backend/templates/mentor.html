@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Mentor - BoardEdge</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+}
+
+.container{
+    width:600px;
+    margin:60px auto;
+    background:rgba(255,255,255,0.15);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+}
+
+input{
+    width:80%;
+    padding:10px;
+    border-radius:10px;
+    border:none;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    background:orange;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.reply{
+    margin-top:20px;
+    padding:15px;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+}
+a{color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>🤖 AI Academic Mentor</h2>
+
+<form method="POST">
+    <input type="text" name="message" placeholder="Ask your study doubt..." required>
+    <button type="submit">Ask</button>
+</form>
+
+{% if reply %}
+<div class="reply">
+    {{ reply }}
+</div>
+{% endif %}
+
+<br>
+<a href="/">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

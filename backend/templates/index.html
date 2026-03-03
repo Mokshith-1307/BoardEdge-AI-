@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BoardEdge AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(120deg,#1f3c88,#3b5998,#667eea);
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(0,0,0,0.2);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+/* HERO SECTION */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px;
+}
+
+/* LEFT SIDE */
+.left{
+    width:50%;
+}
+
+.left h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.left p{
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* RIGHT SIDE CARD */
+.card{
+    width:350px;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#ffb400;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Probability Badge */
+.badge{
+    display:inline-block;
+    margin:15px 0;
+    padding:8px 18px;
+    background:#ffb400;
+    border-radius:20px;
+    color:black;
+    font-weight:bold;
+}
+
+/* FEATURE SECTION */
+.features{
+    display:flex;
+    justify-content:space-around;
+    padding:50px;
+    background:rgba(0,0,0,0.15);
+}
+
+.feature-box{
+    width:250px;
+    text-align:center;
+}
+
+.feature-box h3{
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:20px;
+    font-size:13px;
+    background:rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">🚀 BoardEdge AI</div>
+    <div class="nav-links">
+        <a href="/history">History</a>
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/profile">Profile</a>
+        <a href="/settings">Settings</a>
+        <a href="/mentor">Mentor</a>
+        <a href="/papers">Papers</a>
+        <a href="/formulas">Formulas</a>
+        <a href="/admin">Admin</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="hero">
+
+<div class="left">
+    <h1>Welcome, {{ user }}</h1>
+    <div class="badge">
+        🎯 Selection Probability: {{ probability }}%
+    </div>
+    <p>
+        Transforming academic performance into actionable insights.
+        Predict risk. Improve strategy. Achieve excellence.
+    </p>
+</div>
+
+<div class="card">
+    <h3>Analyze Your Performance</h3>
+    <form method="POST" action="/analyze">
+        <input type="text" name="subject" placeholder="Enter Subject" required>
+        <input type="number" name="marks" placeholder="Enter Marks" required>
+        <button type="submit">Analyze Now</button>
+    </form>
+</div>
+
+</div>
+
+<div class="features">
+    <div class="feature-box">
+        <h3>📊 Smart Risk Analysis</h3>
+        <p>AI-based academic performance evaluation.</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>🏆 Leaderboard Ranking</h3>
+        <p>Compete and track top performers.</p>
+    </div>
+
+    <div class="feature-box">
+        <h3>🤖 AI Mentor</h3>
+        <p>Get personalized academic motivation.</p>
+    </div>
+</div>
+
+<div class="footer">
+© 2026 BoardEdge AI | Intelligent Academic Performance Platform  
+Designed for Next-Gen Students
+</div>
+
+</body>
+</html>

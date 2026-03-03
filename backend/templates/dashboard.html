@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body{
+    font-family:Segoe UI;
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    padding:40px;
+    color:white;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.card{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.05);
+}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Welcome, {{ session["username"] }}</h2>
+
+<div class="grid">
+
+<a href="/">
+<div class="card">
+<h3>📊 Analyze Performance</h3>
+</div>
+</a>
+
+<a href="/mocktest">
+<div class="card">
+<h3>📝 Mock Test</h3>
+</div>
+</a>
+
+<a href="/leaderboard">
+<div class="card">
+<h3>🏆 Leaderboard</h3>
+</div>
+</a>
+
+<a href="/formulas">
+<div class="card">
+<h3>📚 Formulas</h3>
+</div>
+</a>
+
+<a href="/previous">
+<div class="card">
+<h3>📄 Previous Papers</h3>
+</div>
+</a>
+
+<a href="/mentor">
+<div class="card">
+<h3>🤖 Mentor Chat</h3>
+</div>
+</a>
+
+</div>
+
+</body>
+</html>

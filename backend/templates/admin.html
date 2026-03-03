@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard - BoardEdge AI</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    font-family:Segoe UI;
+    color:white;
+    text-align:center;
+}
+
+.card{
+    width:650px;
+    margin:60px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+.stats{
+    margin:15px 0;
+    font-size:18px;
+}
+
+canvas{
+    margin-top:30px;
+}
+
+a{
+    display:inline-block;
+    margin-top:25px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>📊 Admin Analytics Dashboard</h2>
+
+<div class="stats">
+👥 Total Users: {{ total_users }}
+</div>
+
+<div class="stats">
+📝 Total Tests Taken: {{ total_tests }}
+</div>
+
+<div class="stats">
+📈 Average Marks: {{ avg_marks }}
+</div>
+
+<h3>Risk Distribution</h3>
+
+<canvas id="riskChart" width="400" height="400"></canvas>
+
+<a href="/">⬅ Back to Dashboard</a>
+
+</div>
+
+<script>
+const riskData = {{ risk_data|tojson }};
+
+const labels = riskData.map(r => r[0]);
+const counts = riskData.map(r => r[1]);
+
+new Chart(document.getElementById("riskChart"), {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: counts,
+            backgroundColor: ['#00ff99','#ffcc00','#ff4d4d']
+        }]
+    }
+});
+</script>
+
+</body>
+</html>

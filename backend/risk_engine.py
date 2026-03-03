@@ -1,7 +1,7 @@
-def calculate_risk(score):
-    if score < 40:
-        return "High"
-    elif score < 75:
-        return "Moderate"
-    else:
+def calculate_risk(marks):
+    if marks >= 85:
         return "Low"
+    elif marks >= 60:
+        return "Medium"
+    else:
+        return "High"

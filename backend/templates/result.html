@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analysis Result - BoardEdge AI</title>
+
+<style>
+body{
+    margin:0;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    font-family:Segoe UI;
+    color:white;
+    text-align:center;
+}
+
+.card{
+    width:500px;
+    margin:100px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+}
+
+.low{color:#00ff99;}
+.medium{color:#ffcc00;}
+.high{color:#ff4d4d;}
+
+.motivation{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>📊 Analysis Result</h2>
+
+<p><strong>Subject:</strong> {{ subject }}</p>
+<p><strong>Marks:</strong> {{ marks }}</p>
+
+<p>
+<strong>Risk Level:</strong>
+<span class="{% if risk == 'Low' %}low{% elif risk == 'Medium' %}medium{% else %}high{% endif %}">
+{{ risk }}
+</span>
+</p>
+
+<p><strong>Selection Probability:</strong> {{ probability }}%</p>
+
+<div class="motivation">
+{{ motivation }}
+</div>
+
+<br><br>
+
+<a href="/">🔁 Analyze Again</a>
+
+</div>
+
+</body>
+</html>
